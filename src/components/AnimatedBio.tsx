@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const HIGHLIGHTS = ["Sports Branding", "Full-Stack", "Physiolab"];
 
@@ -53,9 +53,9 @@ export default function AnimatedBio() {
   }, [showText]);
 
   const renderHighlightedText = (text: string) => {
-    let result: (string | JSX.Element)[] = [text];
+    let result: React.ReactNode[] = [text];
     HIGHLIGHTS.forEach(keyword => {
-      const newResult: (string | JSX.Element)[] = [];
+      const newResult: React.ReactNode[] = [];
       result.forEach(part => {
         if (typeof part === 'string') {
           const parts = part.split(new RegExp(`(${keyword})`, 'gi'));
