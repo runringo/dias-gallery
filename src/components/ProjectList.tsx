@@ -104,10 +104,8 @@ export default function ProjectList() {
                 </div>
                 
                 <div className="flex-1">
-                  <h3 className="text-3xl md:text-7xl font-black uppercase tracking-tighter group-hover:translate-x-4 group-hover:text-accent transition-all duration-500">
-                    {isHome && project.title.length > 15 
-                      ? `${project.title.substring(0, 15)}...` 
-                      : project.title}
+                  <h3 className="text-3xl md:text-7xl font-black uppercase tracking-tighter group-hover:translate-x-4 group-hover:text-accent transition-all duration-500 max-w-2xl break-words">
+                    {project.title}
                   </h3>
                 </div>
                 
