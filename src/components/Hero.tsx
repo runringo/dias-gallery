@@ -43,7 +43,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="lg:col-span-5 relative h-[600px] lg:h-[750px] flex items-center justify-center">
+        <div className="lg:col-span-5 relative h-[400px] md:h-[600px] lg:h-[750px] flex items-center justify-center">
           <motion.div 
             style={{ y }}
             className="relative w-full h-full border border-white/10 overflow-hidden group"
@@ -63,8 +63,8 @@ export default function Hero() {
           </motion.div>
           
           {/* Decorative Elements */}
-          <div className="absolute -top-4 -right-4 w-20 h-20 border-t border-r border-accent z-30"></div>
-          <div className="absolute -bottom-4 -left-4 w-20 h-20 border-b border-l border-accent z-30"></div>
+          <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 w-12 h-12 md:w-20 md:h-20 border-t border-r border-accent z-30"></div>
+          <div className="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 w-12 h-12 md:w-20 md:h-20 border-b border-l border-accent z-30"></div>
         </div>
       </div>
       

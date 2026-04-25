@@ -97,19 +97,19 @@ export default function ProjectList() {
             >
               <Link 
                 href={`/archive/${project.id}`}
-                className="group flex items-center border-b border-white/10 last:border-b-0 py-16 hover:bg-white/[0.02] transition-colors cursor-pointer relative z-10"
+                className="group flex flex-col md:flex-row md:items-center border-b border-white/10 last:border-b-0 py-10 md:py-16 hover:bg-white/[0.02] transition-colors cursor-pointer relative z-10 gap-6 md:gap-0"
               >
                 <div className="w-20 font-mono text-[10px] text-white/40 group-hover:text-accent transition-colors">
                   [ {project.index} ]
                 </div>
                 
                 <div className="flex-1">
-                  <h3 className="text-6xl md:text-7xl font-black uppercase tracking-tighter group-hover:translate-x-4 group-hover:text-accent transition-all duration-500">
+                  <h3 className="text-3xl md:text-7xl font-black uppercase tracking-tighter group-hover:translate-x-4 group-hover:text-accent transition-all duration-500">
                     {project.title}
                   </h3>
                 </div>
                 
-                <div className="w-64 font-mono text-[10px] tracking-widest flex flex-col gap-2">
+                <div className="w-full md:w-64 font-mono text-[10px] tracking-widest flex flex-col gap-2">
                   <div className="flex justify-between border-b border-white/10 pb-1 group-hover:border-accent/30 transition-colors">
                     <span className="text-white/40 font-bold">CLIENT</span>
                     <span className="text-right uppercase text-white/80 group-hover:text-accent transition-colors">{project.client}</span>

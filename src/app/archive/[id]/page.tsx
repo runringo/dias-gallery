@@ -23,17 +23,17 @@ export default async function ProjectPage({ params }: { params: { id: string } }
     <div className="flex flex-col min-h-screen">
       <Navbar />
       
-      <main className="flex-grow px-8 py-20">
-        <div className="flex items-center gap-2 mb-12 font-mono text-[10px] tracking-[0.2em]">
+      <main className="flex-grow px-4 md:px-8 py-12 md:py-20">
+        <div className="flex items-center gap-2 mb-8 md:mb-12 font-mono text-[10px] tracking-[0.2em]">
           <Link href="/" className="text-white/40 hover:text-accent transition-colors">ARCHIVE</Link>
           <span className="text-white/20">/</span>
           <span className="text-accent">{project.title}</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
           {/* Main Content */}
           <div className="lg:col-span-8">
-            <h1 className="text-huge font-black uppercase leading-none mb-20 break-words">
+            <h1 className="text-huge font-black uppercase leading-none mb-12 md:mb-20 break-words">
               {project.title.replace(/_/g, ' ')}
             </h1>
             
@@ -45,11 +45,11 @@ export default async function ProjectPage({ params }: { params: { id: string } }
 
             {/* Project Images - Only for Sports Branding 2024 (ID 1) */}
             {project.id === '1' && (
-              <section className="mt-40 space-y-40">
+              <section className="mt-20 md:mt-40 space-y-20 md:space-y-40">
                 <div className="space-y-8">
                   <div className="flex justify-between items-end border-b border-white/10 pb-4">
                     <h2 className="font-mono text-xs tracking-widest text-accent uppercase">01_IDENTITY_SYSTEM</h2>
-                    <span className="font-mono text-[8px] text-white/20">FILE: IDENTITY_001.JPG</span>
+                    <span className="hidden sm:block font-mono text-[8px] text-white/20">FILE: IDENTITY_001.JPG</span>
                   </div>
                   <div className="relative aspect-video w-full overflow-hidden border border-white/5 bg-white/5">
                     <Image src="/sports_branding_identity.png" alt="Identity System" fill className="object-cover" />
@@ -59,7 +59,7 @@ export default async function ProjectPage({ params }: { params: { id: string } }
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
                   <div className="space-y-8">
                     <div className="flex justify-between items-end border-b border-white/10 pb-4">
                       <h2 className="font-mono text-xs tracking-widest text-accent uppercase">02_SOCIAL_ECOSYSTEM</h2>
@@ -103,7 +103,7 @@ export default async function ProjectPage({ params }: { params: { id: string } }
                 </div>
                 <div className="flex flex-col gap-2">
                   <span className="text-white/40">TECH_STACK</span>
-                  <div className="flex flex-wrap gap-2 justify-end">
+                  <div className="flex flex-wrap gap-2 md:justify-end">
                     {project.tech?.map((t) => (
                       <span key={t} className="border border-white/20 px-2 py-1 text-[8px]">{t}</span>
                     ))}
@@ -122,26 +122,26 @@ export default async function ProjectPage({ params }: { params: { id: string } }
         </div>
 
         {/* Navigation */}
-        <section className="mt-40 pt-20 border-t border-white/10 grid grid-cols-2 gap-px bg-white/10">
+        <section className="mt-20 md:mt-40 pt-10 md:pt-20 border-t border-white/10 grid grid-cols-2 gap-px bg-white/10">
           {prevProject ? (
             <Link 
               href={`/archive/${prevProject.id}`}
-              className="bg-black py-20 px-8 flex flex-col items-start group hover:bg-white/[0.02] transition-colors"
+              className="bg-black py-12 md:py-20 px-4 md:px-8 flex flex-col items-start group hover:bg-white/[0.02] transition-colors"
             >
-              <span className="font-mono text-[10px] text-white/30 mb-4 tracking-widest uppercase">PREVIOUS_PROJECT</span>
-              <div className="text-8xl mb-4 group-hover:-translate-x-4 transition-transform duration-500 text-accent">←</div>
-              <span className="font-mono text-[10px] tracking-widest text-white/60 uppercase">{prevProject.title}</span>
+              <span className="font-mono text-[8px] md:text-[10px] text-white/30 mb-2 md:mb-4 tracking-widest uppercase">PREVIOUS_PROJECT</span>
+              <div className="text-4xl md:text-8xl mb-2 md:mb-4 group-hover:-translate-x-4 transition-transform duration-500 text-accent">←</div>
+              <span className="font-mono text-[8px] md:text-[10px] tracking-widest text-white/60 uppercase truncate w-full">{prevProject.title}</span>
             </Link>
           ) : <div className="bg-black" />}
 
           {nextProject ? (
             <Link 
               href={`/archive/${nextProject.id}`}
-              className="bg-black py-20 px-8 flex flex-col items-end text-right group hover:bg-white/[0.02] transition-colors"
+              className="bg-black py-12 md:py-20 px-4 md:px-8 flex flex-col items-end text-right group hover:bg-white/[0.02] transition-colors"
             >
-              <span className="font-mono text-[10px] text-white/30 mb-4 tracking-widest uppercase">NEXT_PROJECT</span>
-              <div className="text-8xl mb-4 group-hover:translate-x-4 transition-transform duration-500 text-accent">→</div>
-              <span className="font-mono text-[10px] tracking-widest text-white/60 uppercase">{nextProject.title}</span>
+              <span className="font-mono text-[8px] md:text-[10px] text-white/30 mb-2 md:mb-4 tracking-widest uppercase">NEXT_PROJECT</span>
+              <div className="text-4xl md:text-8xl mb-2 md:mb-4 group-hover:translate-x-4 transition-transform duration-500 text-accent">→</div>
+              <span className="font-mono text-[8px] md:text-[10px] tracking-widest text-white/60 uppercase truncate w-full">{nextProject.title}</span>
             </Link>
           ) : <div className="bg-black" />}
         </section>
